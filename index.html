@@ -1,0 +1,903 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Картки Юлії · Deutsch B1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one centred column (max 680px). Lesson chips + mode on top, one flip card as the hero, two answer buttons; Practice tab with four self-checks; settings & progress code at the bottom. Palette = The People brand: cream, dusty pink, chocolate, blue-grey. */
+:root{
+  --bg:#EDF2FC; --surface:#FAFBFF; --surface-2:#E1E9F8; --ink:#1F2A44; --muted:#5B6890; --line:#D0DBF0;
+  --pink:#D4A29C; --pink-soft:#F3E0DB; --pink-ink:#8E4F48;
+  --blue:#4F73C4; --blue-soft:#DCE6F9; --blue-ink:#2C4A8C;
+  --good:#4F7F5E; --good-soft:#DCEBDF; --bad:#A9564E; --bad-soft:#F5DEDA;
+  --shadow:0 1px 0 rgba(31,42,68,.04),0 12px 30px -14px rgba(31,42,68,.28);
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171C2B; --surface:#1F2638; --surface-2:#283049; --ink:#E6EBF8; --muted:#A3AECB; --line:#313B5A;
+  --pink:#C99189; --pink-soft:#46302C; --pink-ink:#F0C3BC;
+  --blue:#8FAAE6; --blue-soft:#26325A; --blue-ink:#C6D5F7;
+  --good:#8FC09D; --good-soft:#24372A; --bad:#E09A92; --bad-soft:#47292A;
+  --shadow:0 1px 0 rgba(0,0,0,.2),0 14px 30px -14px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171C2B; --surface:#1F2638; --surface-2:#283049; --ink:#E6EBF8; --muted:#A3AECB; --line:#313B5A;
+  --pink:#C99189; --pink-soft:#46302C; --pink-ink:#F0C3BC;
+  --blue:#8FAAE6; --blue-soft:#26325A; --blue-ink:#C6D5F7;
+  --good:#8FC09D; --good-soft:#24372A; --bad:#E09A92; --bad-soft:#47292A;
+  --shadow:0 1px 0 rgba(0,0,0,.2),0 14px 30px -14px rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:680px;margin:0 auto;padding-inline:16px;padding-block:20px 48px;display:flex;flex-direction:column;gap:18px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,7vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--pink-ink)}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;background:var(--surface-2);font-variant-numeric:tabular-nums}
+.chip.k{background:var(--blue-soft);color:var(--blue-ink)}
+.chip.r{background:var(--pink-soft);color:var(--pink-ink)}
+
+.tabs{display:flex;gap:4px;padding:4px;background:var(--surface-2);border-radius:14px}
+.tab{flex:1;border:0;background:transparent;padding:10px 12px;border-radius:10px;font-weight:700;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+
+.lessons{display:flex;flex-direction:column;gap:8px}
+.lesson-row{display:flex;flex-wrap:wrap;gap:6px}
+.lchip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;font-variant-numeric:tabular-nums}
+.lchip small{font-weight:600;opacity:.75}
+.lchip[aria-pressed="true"]{border-color:var(--blue);background:var(--blue-soft);color:var(--blue-ink)}
+.lchip.all[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toggle{border:1px solid var(--line);background:var(--surface);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted)}
+.toggle[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+select{border:1px solid var(--line);background:var(--surface);padding:7px 10px;border-radius:999px;font-size:13px;font-weight:600;max-width:100%}
+.spacer{flex:1}
+
+.progress{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{flex:1;height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--pink);border-radius:99px;transition:width .3s}
+.linkbtn{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:12px;padding:0}
+
+.scene{perspective:1400px}
+.card{position:relative;display:grid;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.3,.7,.2,1);cursor:pointer;min-height:310px}
+.card.flipped{transform:rotateY(180deg)}
+.card.instant{transition:none}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.back{transform:rotateY(180deg)}
+.card:not(.flipped) .back,.card.flipped .front{pointer-events:none}
+.face-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lang{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.tag{font-size:11px;font-weight:700;color:var(--blue-ink);background:var(--blue-soft);border-radius:999px;padding:2px 8px;margin-left:6px;letter-spacing:.04em;text-transform:none}
+.front .main{flex:1;display:flex;align-items:center;justify-content:center;text-align:center}
+.phrase{font-family:var(--display);font-weight:700;font-size:clamp(26px,6.4vw,40px);line-height:1.12;text-wrap:balance;margin:0;overflow-wrap:anywhere}
+.hint{font-size:12px;color:var(--muted);text-align:center}
+.say{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center}
+.say svg{width:20px;height:20px}
+.say:active{transform:scale(.94)}
+.dict{font-size:12px;font-weight:700;color:var(--blue-ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.dict:hover{background:var(--blue-soft)}
+
+.back-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.back-head .t{min-width:0}
+.back-head .side{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(22px,5.4vw,30px);line-height:1.15;margin:0;text-wrap:balance}
+.small{color:var(--muted);font-weight:600;font-size:14px;margin:2px 0 0}
+.block{display:flex;flex-direction:column;gap:6px;border-top:1px dashed var(--line);padding-top:12px}
+.label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.ex{margin:0;font-size:16px}
+.gap{border:0;border-bottom:2px dotted var(--pink);background:var(--pink-soft);color:var(--pink-ink);font-weight:700;padding:0 6px;border-radius:6px 6px 0 0;min-width:3.5em}
+.cols{display:flex;flex-wrap:wrap;gap:6px}
+.col{background:var(--surface-2);padding:4px 10px;border-radius:8px;font-size:13.5px;font-weight:600}
+
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{border:1.5px solid transparent;border-radius:14px;padding:13px 14px;font-weight:700;font-size:15px}
+.btn-r{background:var(--pink-soft);color:var(--pink-ink);border-color:var(--pink)}
+.btn-k{background:var(--blue-soft);color:var(--blue-ink);border-color:var(--blue)}
+.btn-plain{background:var(--surface);border-color:var(--line)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-sm{padding:8px 12px;font-size:13px;border-radius:10px}
+.btn:disabled{opacity:.45;cursor:default}
+.keys{font-size:12px;color:var(--muted);text-align:center}
+.keys kbd{font-family:var(--body);background:var(--surface-2);border-radius:4px;padding:0 5px;font-size:11px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;gap:14px}
+.panel h2{font-family:var(--display);font-size:24px;margin:0;line-height:1.15}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.list li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.list li:last-child{border-bottom:0}
+.list b{font-weight:700}
+.list span{color:var(--muted);text-align:right}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.muted{color:var(--muted);margin:0}
+
+.ex-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ex-tab{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 6px;font-weight:700;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
+.ex-tab small{font-weight:500;font-size:11px}
+.ex-tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:480px){.ex-tabs{grid-template-columns:1fr 1fr}.ex-tab:last-child:nth-child(odd){grid-column:span 2}}
+.fx-sent{display:flex;flex-wrap:wrap;gap:6px;font-size:18px}
+.fx-part{border:1.5px dashed var(--line);background:var(--surface);border-radius:10px;padding:6px 10px;font-weight:600;text-align:left}
+.fx-part:hover{border-color:var(--blue)}
+.fx-part.miss{border-style:solid;border-color:var(--line);opacity:.55;animation:shake .35s}
+.fx-part.found{border-style:solid;border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}
+.fx-part.fixed{text-decoration:none;border-color:var(--good);background:var(--good-soft);color:var(--good)}
+.fx-step{display:flex;flex-direction:column;gap:8px}
+.sit-box{background:var(--surface-2);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.sit-text{font-family:var(--display);font-weight:700;font-size:clamp(19px,4.6vw,23px);line-height:1.3;margin:0;text-wrap:pretty}
+.sit-uk{font-size:14px;color:var(--muted);margin:0}
+.fork{display:flex;flex-direction:column;align-items:center;gap:14px}
+.fork-key{font-family:var(--display);font-weight:700;font-size:clamp(26px,6vw,36px);background:var(--ink);color:var(--bg);border-radius:16px;padding:8px 20px;text-align:center}
+.fork-opts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.fopt{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 16px;font-weight:700}
+.fopt[aria-pressed="true"]{border-color:var(--blue);background:var(--blue-soft);color:var(--blue-ink)}
+.fopt.good{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+.fopt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}
+.fopt.missed{border-color:var(--good);border-style:dashed;color:var(--good)}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:10px;border:1.5px dashed var(--line);border-radius:14px}
+.schip{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px;text-align:left}
+.schip.sel{border-color:var(--blue);background:var(--blue-soft);color:var(--blue-ink)}
+.schip.good{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+.schip.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+.schip small{display:block;font-weight:600;font-size:11px}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.bin{border:1.5px solid var(--line);background:var(--surface-2);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px;min-height:90px;text-align:left;cursor:pointer;min-width:0}
+.bin.armed{border-color:var(--blue);background:var(--blue-soft)}
+.bin-name{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.bin-items{display:flex;flex-wrap:wrap;gap:6px}
+
+.match{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.match .colm{display:flex;flex-direction:column;gap:8px;min-width:0}
+.m{border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:10px;text-align:left;font-weight:600;min-height:48px;overflow-wrap:anywhere}
+.m.sel{border-color:var(--blue);background:var(--blue-soft)}
+.m.ok{border-color:var(--good);background:var(--good-soft);color:var(--good);opacity:.7;cursor:default}
+.m.no{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+.q-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.q-sent{font-size:18px;line-height:1.7;margin:0}
+.q-sent input,.typed{border:0;border-bottom:2px solid var(--pink);background:var(--pink-soft);border-radius:6px 6px 0 0;padding:2px 6px;font-weight:700;color:var(--pink-ink);max-width:100%}
+.typed{width:100%;font-size:18px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink)}
+.q-sent input.good,.typed.good{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.q-sent input.wrong,.typed.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.fb{margin:0;font-weight:600;min-height:1.5em}
+.fb.good{color:var(--good)} .fb.wrong{color:var(--bad)}
+.opts{display:grid;gap:8px}
+.opt{border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;text-align:left;font-weight:600}
+.opt.good{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+.q-phrase{display:flex;align-items:center;gap:12px}
+.q-phrase .big{flex:1;min-width:0}
+.play{display:flex;gap:10px;flex-wrap:wrap}
+.score{font-family:var(--display);font-size:52px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-size:22px;color:var(--muted)}
+
+details.settings{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:4px 18px}
+details.settings summary{cursor:pointer;font-weight:700;padding:12px 0;list-style-position:inside}
+.set-body{display:flex;flex-direction:column;gap:14px;padding-bottom:16px}
+.set-body .field{display:flex;flex-direction:column;gap:6px}
+.set-body select{border-radius:10px;width:100%}
+textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);padding:8px 10px;font-size:12px;resize:vertical;overflow-wrap:anywhere}
+.note{font-size:13px;color:var(--muted);margin:0}
+.ok-msg{font-size:13px;font-weight:600;color:var(--good);margin:0;min-height:1.2em}
+@media (prefers-reduced-motion: reduce){.card,.bar i{transition:none}.m.no{animation:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Deutsch · B1</div>
+    <h1>Картки <em>Юлії</em></h1>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="lessons">
+    <span class="label">Уроки</span>
+    <div class="lesson-row" id="lessonRow"></div>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-cards" aria-selected="true">Картки</button>
+    <button class="tab" role="tab" id="tab-practice" aria-selected="false">Вправи</button>
+  </div>
+
+  <!-- CARDS -->
+  <section id="view-cards" style="display:flex;flex-direction:column;gap:14px">
+    <div class="controls">
+      <select id="mode" aria-label="Що вчити">
+        <option value="today">На сьогодні</option>
+        <option value="all">Усі картки</option>
+        <option value="repeat">Тільки «повторити»</option>
+        <option value="new">Тільки нові</option>
+      </select>
+      <span class="spacer"></span>
+      <button class="toggle" id="shuffle" aria-pressed="true">Випадково</button>
+      <button class="toggle" id="reverse" aria-pressed="false">UA → DE</button>
+    </div>
+    <div class="progress"><div class="bar"><i id="barfill"></i></div><span id="count">0 / 0</span><button class="linkbtn" id="restartTop">почати заново</button></div>
+    <div id="stage"></div>
+  </section>
+
+  <!-- PRACTICE -->
+  <section id="view-practice" hidden style="flex-direction:column;gap:14px">
+    <div class="ex-tabs" role="tablist">
+      <button class="ex-tab" data-ex="match" aria-selected="true">Пари<small>DE ↔ UA</small></button>
+      <button class="ex-tab" data-ex="gap" aria-selected="false">Пропуск<small>впиши слово</small></button>
+      <button class="ex-tab" data-ex="choice" aria-selected="false">Тест<small>обери варіант</small></button>
+      <button class="ex-tab" data-ex="listen" aria-selected="false">Диктант<small>почуй і напиши</small></button>
+      <button class="ex-tab" data-ex="fork" aria-selected="false">Виделки<small>що з чим поєднується</small></button>
+      <button class="ex-tab" data-ex="sort" aria-selected="false">Категорії<small>розклади по групах</small></button>
+    </div>
+    <div class="controls">
+      <select id="ppool" aria-label="З яких фраз робити вправи">
+        <option value="all">Усі фрази обраних уроків</option>
+        <option value="repeat">Тільки «повторити»</option>
+      </select>
+    </div>
+    <div id="pstage"></div>
+  </section>
+
+  <details class="settings" id="settings">
+    <summary>Налаштування й прогрес</summary>
+    <div class="set-body">
+      <div class="field">
+        <span class="label">Голос озвучки</span>
+        <select id="voiceSel" aria-label="Голос озвучки"></select>
+        <div class="row"><button class="btn btn-plain btn-sm" id="voiceTest">Прослухати</button></div>
+        <p class="note">Найприродніше звучать голоси з позначкою ★. На iPhone кращі голоси можна завантажити: Параметри → Доступність → Вміст мовлення → Голоси → Deutsch. Кнопка «DWDS ↗» на звороті картки відкриває слово в німецькому словнику.</p>
+      </div>
+      <div class="field">
+        <span class="label">Збереження прогресу</span>
+        <p class="note">Прогрес і місце в колоді зберігаються автоматично в цьому браузері. Відкривай сторінку завжди в одному браузері (Safari або Chrome, не всередині Telegram). Щоб перенести прогрес на інший пристрій, скопіюй код і встав його там.</p>
+        <div class="row"><button class="btn btn-k btn-sm" id="copyCode">Скопіювати код прогресу</button></div>
+        <textarea id="codeBox" placeholder="Встав сюди код прогресу" aria-label="Код прогресу"></textarea>
+        <div class="row"><button class="btn btn-plain btn-sm" id="loadCode">Відновити з коду</button><button class="btn btn-plain btn-sm" id="reset">Скинути весь прогрес</button></div>
+        <p class="ok-msg" id="codeMsg"></p>
+      </div>
+    </div>
+  </details>
+</div>
+
+<script>
+/* ============================================================
+   ФРАЗИ. Щоб додати нові, дописуй об'єкти в CARDS, FORKS, SORTS.
+   lesson – "Wohnwelten", "Obdachlosigkeit 2"… (новий урок = нова кнопка)
+   en  – лицьовий бік (німецька фраза; ключ прогресу)   say – що читає голос (необов'язково)
+   uk  – переклад   ex – приклад, ___ = пропуск   ans – слово для пропуску
+   col – 2–3 колокації   dict – головне слово для словника DWDS
+   ============================================================ */
+const CARDS = [
+{lesson:"Wohnwelten", en:"im Hier und Jetzt leben", dict:"jetzt", uk:"жити тут і зараз", ex:"Beim Meditieren übe ich, im Hier und Jetzt zu ___.", ans:"leben", col:["bewusst im Hier und Jetzt leben","das Hier und Jetzt genießen","im Moment leben"]},
+{lesson:"Wohnwelten", en:"etwas in vollen Zügen genießen", dict:"genießen", uk:"насолоджуватися чимось на повну, на всі сто", ex:"Im Urlaub wollten wir den Sommer in vollen Zügen ___.", ans:"genießen", col:["den Urlaub in vollen Zügen genießen","das Leben in vollen Zügen genießen","den Moment genießen"]},
+{lesson:"Wohnwelten", en:"Kundenkarten haben", dict:"Kundenkarte", uk:"мати картки клієнта (картки лояльності)", ex:"In meinem Portemonnaie stecken so viele ___, dass kaum Platz für Geld bleibt.", ans:"Kundenkarten", col:["eine Kundenkarte beantragen","mit der Kundenkarte Punkte sammeln","die Kundenkarte vorzeigen"]},
+{lesson:"Wohnwelten", en:"Bauchschmerzen bekommen", dict:"Bauchschmerzen", uk:"занепокоїтися, відчути тривогу (букв. «біль у животі»)", ex:"Wenn ich an die schwierige Prüfung denke, bekomme ich richtig ___.", ans:"Bauchschmerzen", col:["bei dem Gedanken Bauchschmerzen bekommen","etwas bereitet mir Bauchschmerzen","ein ungutes Gefühl haben"]},
+{lesson:"Wohnwelten", en:"in den Wind schlagen", dict:"Wind", uk:"пропустити повз вуха, проігнорувати", ex:"Er hat meinen Rat einfach in den ___ geschlagen.", ans:"Wind", col:["einen Rat in den Wind schlagen","eine Warnung in den Wind schlagen","alle Hinweise in den Wind schlagen"]},
+{lesson:"Wohnwelten", en:"neue Energie tanken", dict:"tanken", uk:"набратися нових сил, зарядитися енергією", ex:"Am Wochenende fahre ich ans Meer, um neue ___ zu tanken.", ans:"Energie", col:["neue Energie tanken","in der Natur Kraft tanken","Sonne tanken"]},
+{lesson:"Wohnwelten", en:"dem Stress entkommen", dict:"entkommen", uk:"уникнути стресу, втекти від стресу", ex:"Ein Spaziergang im Wald hilft mir, dem ___ zu entkommen.", ans:"Stress", col:["dem Stress entkommen","der Hektik entkommen","dem Alltag entkommen"]},
+{lesson:"Wohnwelten", en:"sesshaft werden", dict:"sesshaft", uk:"осісти на одному місці, остепенитися", ex:"Mit 35 wollte sie endlich ___ werden und nicht mehr ständig umziehen.", ans:"sesshaft", col:["endlich sesshaft werden","ein sesshaftes Leben führen","sich niederlassen"]},
+{lesson:"Wohnwelten", en:"eine Welt außerhalb der Stadt", dict:"außerhalb", uk:"світ поза містом", ex:"Auf dem Land habe ich eine Welt ___ der Stadt entdeckt.", ans:"außerhalb", col:["außerhalb der Stadt wohnen","außerhalb der Stadt arbeiten","eine neue Welt entdecken"]},
+{lesson:"Wohnwelten", en:"einen Steinwurf entfernt sein", dict:"Steinwurf", uk:"бути зовсім поруч, «рукою подати» (букв. «на відстані кидка каменя»)", ex:"Der See ist nur einen ___ von unserem Haus entfernt.", ans:"Steinwurf", col:["nur einen Steinwurf entfernt","einen Steinwurf vom Strand entfernt","ganz in der Nähe"]},
+{lesson:"Obdachlosigkeit 2", en:"die Einsamkeit", dict:"Einsamkeit", uk:"самотність", ex:"Viele Obdachlose leiden unter großer ___.", ans:"Einsamkeit", col:["unter Einsamkeit leiden", "die Einsamkeit im Alter", "gegen die Einsamkeit kämpfen"]},
+{lesson:"Obdachlosigkeit 2", en:"einsam sein", dict:"einsam", uk:"бути самотнім", ex:"Ich möchte im Alter nicht ___ sein.", ans:"einsam", col:["sich einsam fühlen", "völlig einsam sein", "einsam und allein"]},
+{lesson:"Obdachlosigkeit 2", en:"einsam", dict:"einsam", uk:"самотній", ex:"Er fühlt sich in der großen Stadt sehr ___.", ans:"einsam", col:["ein einsamer Mensch", "einsame Nächte", "einsam und verlassen"]},
+{lesson:"Obdachlosigkeit 2", en:"die Intoleranz", dict:"Intoleranz", uk:"нетерпимість", ex:"Viele Menschen reagieren mit ___ auf Obdachlose.", ans:"Intoleranz", col:["religiöse Intoleranz", "mit Intoleranz reagieren", "gegen Intoleranz kämpfen"]},
+{lesson:"Obdachlosigkeit 2", en:"nicht tolerieren", dict:"tolerieren", uk:"не терпіти, не миритися з", ex:"Die Stadt will Betteln vor dem Bahnhof nicht ___.", ans:"tolerieren", col:["Gewalt nicht tolerieren", "ein Verhalten tolerieren", "etwas nicht länger tolerieren"]},
+{lesson:"Obdachlosigkeit 2", en:"intolerant", dict:"intolerant", uk:"нетерпимий", ex:"Er ist ___ gegenüber Menschen ohne Wohnung.", ans:"intolerant", col:["intolerant gegenüber Fremden", "eine intolerante Haltung", "intolerant sein"]},
+{lesson:"Obdachlosigkeit 2", en:"die Freiheit", dict:"Freiheit", uk:"свобода", ex:"Manche sagen, dass sie auf der Straße mehr ___ haben.", ans:"Freiheit", col:["die persönliche Freiheit", "Freiheit genießen", "für die Freiheit kämpfen"]},
+{lesson:"Obdachlosigkeit 2", en:"frei sein", dict:"frei", uk:"бути вільним", ex:"Er wollte nie wieder abhängig, sondern ___ sein.", ans:"frei", col:["frei von Sorgen sein", "frei und unabhängig sein", "frei sein von Zwängen"]},
+{lesson:"Obdachlosigkeit 2", en:"frei", dict:"frei", uk:"вільний (також: вільне місце, вихідний)", ex:"Ist dieser Platz noch ___?", ans:"frei", col:["ein freier Platz", "ein freier Tag", "frei haben"]},
+{lesson:"Obdachlosigkeit 2", en:"die Isolation", dict:"Isolation", uk:"ізоляція", ex:"Lange ___ macht Menschen krank.", ans:"Isolation", col:["soziale Isolation", "in Isolation leben", "aus der Isolation herauskommen"]},
+{lesson:"Obdachlosigkeit 2", en:"sich isolieren", dict:"isolieren", uk:"ізолюватися, замикатися в собі", ex:"Nach der Scheidung hat er sich immer mehr ___.", ans:"isoliert", col:["sich von anderen isolieren", "sich sozial isolieren", "sich zurückziehen"]},
+{lesson:"Obdachlosigkeit 2", en:"isoliert", dict:"isoliert", uk:"ізольований, відрізаний від людей", ex:"Er lebt völlig ___ von seiner Familie.", ans:"isoliert", col:["isoliert leben", "sozial isoliert sein", "isoliert von der Außenwelt"]},
+{lesson:"Obdachlosigkeit 2", en:"die Obdachlosigkeit", dict:"Obdachlosigkeit", uk:"бездомність", ex:"Der Verlust der Arbeit kann zur ___ führen.", ans:"Obdachlosigkeit", col:["in die Obdachlosigkeit abrutschen", "von Obdachlosigkeit bedroht sein", "Obdachlosigkeit bekämpfen"]},
+{lesson:"Obdachlosigkeit 2", en:"obdachlos sein", dict:"obdachlos", uk:"бути бездомним", ex:"Seit drei Jahren ist er ___.", ans:"obdachlos", col:["obdachlos werden", "seit Jahren obdachlos sein", "obdachlos auf der Straße leben"]},
+{lesson:"Obdachlosigkeit 2", en:"obdachlos", dict:"obdachlos", uk:"бездомний", ex:"Viele ___ Menschen übernachten im Winter am Bahnhof.", ans:"obdachlose", col:["ein obdachloser Mann", "obdachlose Menschen", "obdachlos und arbeitslos"]},
+{lesson:"Obdachlosigkeit 2", en:"die Frustration", dict:"Frustration", uk:"розчарування, фрустрація", ex:"Die ___ über die vielen Absagen war groß.", ans:"Frustration", col:["große Frustration", "die Frustration abbauen", "aus Frustration handeln"]},
+{lesson:"Obdachlosigkeit 2", en:"frustriert sein", dict:"frustriert", uk:"бути розчарованим, фруструватися", ex:"Nach so vielen Absagen ist sie total ___.", ans:"frustriert", col:["total frustriert sein", "frustriert über etwas sein", "frustriert aufgeben"]},
+{lesson:"Obdachlosigkeit 2", en:"frustriert", dict:"frustriert", uk:"розчарований, роздратований", ex:"Er wirkte müde und ___.", ans:"frustriert", col:["frustriert wirken", "ein frustrierter Mensch", "frustriert und wütend"]},
+{lesson:"Obdachlosigkeit 2", en:"die Armut", dict:"Armut", uk:"бідність", ex:"In dieser Gegend leben viele Familien in ___.", ans:"Armut", col:["in Armut leben", "von Armut bedroht sein", "die Armut bekämpfen"]},
+{lesson:"Obdachlosigkeit 2", en:"arm sein", dict:"arm", uk:"бути бідним", ex:"Wir waren damals sehr ___.", ans:"arm", col:["sehr arm sein", "arm, aber glücklich", "arm an Geld"]},
+{lesson:"Obdachlosigkeit 2", en:"arm", dict:"arm", uk:"бідний", ex:"Er kommt aus einer ___ Familie.", ans:"armen", col:["arme Menschen", "ein armes Land", "Arm und Reich"]},
+{lesson:"Obdachlosigkeit 2", en:"die Familie", dict:"Familie", uk:"сім'я", ex:"Seine ___ wohnt weit weg, deshalb hat er kaum Kontakt.", ans:"Familie", col:["eine Familie gründen", "zur Familie gehören", "Kontakt zur Familie haben"]},
+{lesson:"Obdachlosigkeit 2", en:"das Wohnheim", dict:"Wohnheim", uk:"гуртожиток, соціальний притулок", ex:"Nach der Scheidung zog er in ein ___.", ans:"Wohnheim", col:["im Wohnheim wohnen", "ein Wohnheim für Obdachlose", "ein Platz im Wohnheim"]},
+{lesson:"Obdachlosigkeit 2", en:"das Sozialamt", dict:"Sozialamt", uk:"соціальна служба, відомство соціальної допомоги", ex:"Er hat beim ___ Hilfe beantragt.", ans:"Sozialamt", col:["zum Sozialamt gehen", "beim Sozialamt Hilfe beantragen", "vom Sozialamt unterstützt werden"]},
+{lesson:"Obdachlosigkeit 2", en:"die Freunde", dict:"Freund", uk:"друзі", ex:"Ohne ___ fühlt man sich schnell allein.", ans:"Freunde", col:["gute Freunde", "Freunde verlieren", "Freunde finden"]},
+{lesson:"Obdachlosigkeit 2", en:"die Angst", dict:"Angst", uk:"страх, тривога", ex:"Sie hat ___ vor dem nächsten Winter.", ans:"Angst", col:["Angst haben vor", "aus Angst", "vor Angst zittern"]},
+{lesson:"Obdachlosigkeit 2", en:"die Perspektive", dict:"Perspektive", uk:"перспектива", ex:"Ohne Wohnung sehen viele keine ___.", ans:"Perspektive", col:["eine Perspektive haben", "keine Perspektive sehen", "neue Perspektiven eröffnen"]},
+{lesson:"Obdachlosigkeit 2", en:"die Hoffnung", dict:"Hoffnung", uk:"надія", ex:"Trotz allem gibt er die ___ nicht auf.", ans:"Hoffnung", col:["die Hoffnung aufgeben", "Hoffnung haben", "die Hoffnung nicht verlieren"]},
+{lesson:"Obdachlosigkeit 2", en:"die Suppenküche", dict:"Suppenküche", uk:"безкоштовна їдальня для бідних", ex:"Im Winter bekommen viele Obdachlose ein warmes Essen in der ___.", ans:"Suppenküche", col:["in die Suppenküche gehen", "eine Suppenküche für Bedürftige", "ehrenamtlich in der Suppenküche helfen"]},
+{lesson:"Obdachlosigkeit 2", en:"der Alkohol", dict:"Alkohol", uk:"алкоголь", ex:"Viele flüchten in den ___, wenn sie ihre Probleme nicht lösen können.", ans:"Alkohol", col:["Alkohol trinken", "vom Alkohol abhängig sein", "Alkohol missbrauchen"]},
+{lesson:"Obdachlosigkeit 2", en:"die Scheidung", dict:"Scheidung", uk:"розлучення", ex:"Nach der ___ verlor er auch seine Wohnung.", ans:"Scheidung", col:["die Scheidung einreichen", "kurz vor der Scheidung stehen", "die Folgen einer Scheidung"]},
+{lesson:"Obdachlosigkeit 2", en:"die Schulden", dict:"Schulden", uk:"борги (лише множина)", ex:"Er hat so hohe ___, dass er die Miete nicht mehr zahlen konnte.", ans:"Schulden", col:["Schulden haben", "Schulden machen", "Schulden zurückzahlen"]},
+{lesson:"Obdachlosigkeit 2", en:"die Chancenlosigkeit", dict:"Chancenlosigkeit", uk:"безперспективність, відсутність шансів", ex:"Viele junge Menschen ohne Ausbildung klagen über ___.", ans:"Chancenlosigkeit", col:["das Gefühl der Chancenlosigkeit", "unter Chancenlosigkeit leiden"]},
+{lesson:"Obdachlosigkeit 2", en:"die Krankheit", dict:"Krankheit", uk:"хвороба", ex:"Eine schwere ___ kann Menschen in die Armut treiben.", ans:"Krankheit", col:["an einer Krankheit leiden", "eine schwere Krankheit", "eine Krankheit behandeln"]},
+{lesson:"Obdachlosigkeit 2", en:"die Erfolglosigkeit", dict:"Erfolglosigkeit", uk:"невдачі, відсутність успіху", ex:"Nach Jahren der ___ bei der Jobsuche gab er auf.", ans:"Erfolglosigkeit", col:["jahrelange Erfolglosigkeit", "an Erfolglosigkeit verzweifeln"]},
+{lesson:"Obdachlosigkeit 2", en:"die Randgruppe", dict:"Randgruppe", uk:"маргінальна група", ex:"Obdachlose gehören oft zu den gesellschaftlichen ___.", ans:"Randgruppen", col:["eine gesellschaftliche Randgruppe", "zu einer Randgruppe gehören", "am Rand der Gesellschaft"]},
+{lesson:"Obdachlosigkeit 2", en:"die Notunterkunft", dict:"Notunterkunft", uk:"нічліжка, тимчасовий притулок", ex:"Im Winter öffnen viele Städte zusätzliche ___ für Obdachlose.", ans:"Notunterkünfte", col:["in einer Notunterkunft übernachten", "einen Platz in der Notunterkunft bekommen", "eine Notunterkunft für Obdachlose"]},
+{lesson:"Obdachlosigkeit 2", en:"mein Kopf explodiert", dict:"explodieren", uk:"у мене голова розривається (забагато всього)", ex:"Zu viele Sorgen auf einmal, mein Kopf ___ gleich.", ans:"explodiert", col:["mir raucht der Kopf", "mir brummt der Kopf", "zu viele Gedanken im Kopf haben"]},
+{lesson:"Obdachlosigkeit 2", en:"sich etwas ausdenken", dict:"ausdenken", uk:"вигадати, придумати щось", ex:"Ich habe mir eine kleine Geschichte ___.", ans:"ausgedacht", col:["sich eine Geschichte ausdenken", "sich eine Lösung ausdenken", "sich Ausreden ausdenken"]},
+{lesson:"Obdachlosigkeit 2", en:"13 Jahre hintereinander", dict:"hintereinander", uk:"13 років поспіль", ex:"Er hat 13 Jahre ___ auf der Straße gelebt.", ans:"hintereinander", col:["drei Tage hintereinander", "mehrere Jahre hintereinander", "zweimal hintereinander"], say:"dreizehn Jahre hintereinander"},
+{lesson:"Obdachlosigkeit 2", en:"gepflegt", dict:"gepflegt", uk:"доглянутий, охайний", ex:"Trotz seiner Lage sieht er immer ___ aus.", ans:"gepflegt", col:["gepflegt aussehen", "ein gepflegtes Äußeres", "gepflegte Kleidung"]},
+{lesson:"Obdachlosigkeit 2", en:"die Folge", dict:"Folge", uk:"наслідок", ex:"Obdachlosigkeit kann die ___ einer Scheidung sein.", ans:"Folge", col:["die Folge von etwas sein", "schlimme Folgen haben", "als Folge davon"]},
+{lesson:"Obdachlosigkeit 2", en:"aus unterschiedlichen Blickwinkeln", dict:"Blickwinkel", uk:"під різними кутами зору", ex:"Wir sollten das Problem aus unterschiedlichen ___ betrachten.", ans:"Blickwinkeln", col:["aus einem anderen Blickwinkel", "etwas aus allen Blickwinkeln betrachten", "ein neuer Blickwinkel"]},
+{lesson:"Obdachlosigkeit 2", en:"ich neige zu ...", dict:"neigen", uk:"я схильний до ...", ex:"Ich ___ zu schnellen Entscheidungen.", ans:"neige", col:["zu Übertreibungen neigen", "dazu neigen, etwas zu tun", "zu Stress neigen"], say:"ich neige zu etwas"},
+];
+
+/* FORKS: ключове слово + що з ним поєднується (ok) + одне зайве (bad) */
+const FORKS = [
+{lesson:"Wohnwelten", word:"genießen", ok:["den Moment","die Ruhe","das Leben"], bad:["Kopfschmerzen"], why:"den Moment / die Ruhe / das Leben genießen, але Kopfschmerzen man hat, а не genießt."},
+{lesson:"Wohnwelten", word:"tanken", ok:["Energie","Kraft","Sonne"], bad:["Stress"], why:"Energie / Kraft / Sonne tanken, але Stress hat man або baut ihn ab."},
+{lesson:"Wohnwelten", word:"entkommen", ok:["dem Stress","der Hektik","dem Lärm"], bad:["den Alltag"], why:"entkommen + Dativ: dem Stress, der Hektik, dem Lärm. Тож dem Alltag entkommen, а не «den Alltag»."},
+{lesson:"Wohnwelten", word:"in den Wind schlagen", ok:["einen Rat","eine Warnung","einen Hinweis"], bad:["eine Rechnung"], why:"einen Rat / eine Warnung / einen Hinweis in den Wind schlagen, але eine Rechnung bezahlt man."},
+{lesson:"Obdachlosigkeit 2", word:"Schulden", ok:["machen", "haben", "zurückzahlen"], bad:["genießen"], why:"Schulden machen / haben / zurückzahlen, але не genießen."},
+{lesson:"Obdachlosigkeit 2", word:"Angst", ok:["haben", "bekommen", "überwinden"], bad:["beantragen"], why:"Angst haben / bekommen / überwinden. Beantragen — це про документ чи допомогу."},
+{lesson:"Obdachlosigkeit 2", word:"Hilfe", ok:["beantragen", "bekommen", "brauchen"], bad:["tolerieren"], why:"Hilfe beantragen / bekommen / brauchen. Tolerieren — це про поведінку (Gewalt nicht tolerieren)."},
+{lesson:"Obdachlosigkeit 2", word:"Armut", ok:["bekämpfen", "verhindern", "überwinden"], bad:["reparieren"], why:"Armut bekämpfen / verhindern / überwinden. Reparieren — про речі, не про проблеми."},
+];
+
+/* SORTS: один набір груп на урок; кожна фраза лише в одній групі */
+const SORTS = [
+{lesson:"Wohnwelten", title:"Про що ця фраза?", cats:{
+  "Відпочинок і задоволення":["im Hier und Jetzt leben","etwas in vollen Zügen genießen","neue Energie tanken"],
+  "Місто, дім і повсякдення":["Kundenkarten haben","sesshaft werden","eine Welt außerhalb der Stadt","einen Steinwurf entfernt sein"],
+  "Проблеми й напруга":["Bauchschmerzen bekommen","dem Stress entkommen","in den Wind schlagen"]}},
+{lesson:"Obdachlosigkeit 2", title:"Причина, почуття чи допомога?", cats:{
+  "Причини бездомності":["die Scheidung","die Schulden","der Alkohol","die Krankheit"],
+  "Почуття":["die Einsamkeit","die Angst","die Frustration","die Hoffnung"],
+  "Допомога й місця":["das Sozialamt","die Suppenküche","die Notunterkunft","das Wohnheim"]}},
+];
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffled = a => { const b = a.slice(); for (let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];} return b; };
+const norm = s => String(s).toLowerCase()
+  .replace(/[’‘`]/g,"'").replace(/\(.*?\)/g,' ')
+  .replace(/ß/g,'ss').replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue')
+  .replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim();
+const SPK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const BY_ID = Object.fromEntries(CARDS.map(c=>[c.en,c]));
+const LESSONS = [...new Set(CARDS.map(c=>c.lesson))];
+const today = () => { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset()*60000) / 864e5); };
+const INTERVALS = [0,1,3,7,14,30,60];   // days until the next review for each box
+const DAILY = 20;                         // cards per "today" portion
+
+/* ---------- saved progress (this browser) ---------- */
+const KEY = 'yulia-de-phrase-cards-v1', OLD_KEY = 'yulia-de-phrase-cards-v0';
+let P = {v:2, cards:{}, sel:null, mode:'today', shuffle:true, reverse:false, voice:'', session:null};
+function load(){
+  try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.v===2){ P = Object.assign(P, s); if (Array.isArray(P.sel)) P.sel = P.sel.map(l => l==='Lesson 1' ? 'Wohnwelten' : l); return; } } catch(e){}
+  try { // move marks from the first version
+    const o = JSON.parse(localStorage.getItem(OLD_KEY));
+    if (o && o.known){ const t = today();
+      Object.keys(o.known).forEach(k => P.cards[k] = {b:2, due:t+3});
+      Object.keys(o.repeat||{}).forEach(k => P.cards[k] = {b:0, due:t});
+    }
+  } catch(e){}
+}
+const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(P)); }catch(e){} };
+load();
+if (P.sel) P.sel = P.sel.filter(l => LESSONS.includes(l)); if (P.sel && !P.sel.length) P.sel = null;
+
+const isRepeat = c => { const s = P.cards[c.en]; return s && s.b===0; };
+const isNew = c => !P.cards[c.en];
+const isDue = c => { const s = P.cards[c.en]; return !s || s.due <= today(); };
+const selected = () => CARDS.filter(c => !P.sel || P.sel.includes(c.lesson));
+
+function grade(c, knew){
+  const s = P.cards[c.en] || {b:0, due:today()};
+  if (knew){ s.b = Math.min(s.b+1, INTERVALS.length-1); s.due = today() + INTERVALS[s.b]; }
+  else { s.b = 0; s.due = today(); }
+  P.cards[c.en] = s;
+}
+
+/* ---------- speech ---------- */
+const NOVELTY = /Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Junior|Ralph|Fred|Kathy|Grandma|Grandpa|Eddy|Flo|Reed|Rocko|Sandy|Shelley/i;
+let voices = [];
+function voiceScore(v){
+  let s = 0;
+  if (/de[-_]DE/i.test(v.lang)) s += 2; else s += .5;
+  if (/natural|neural|premium|enhanced|siri/i.test(v.name)) s += 4;
+  if (/google/i.test(v.name)) s += 3;
+  if (/anna|petra|markus|yannick|viktor|katja|conrad|amala|vicki|hedda|stefan|marlene|hans|killian|seraphina|florian|louisa/i.test(v.name)) s += 1;
+  if (NOVELTY.test(v.name)) s -= 10;
+  return s;
+}
+function loadVoices(){
+  try { voices = speechSynthesis.getVoices().filter(v => /^de/i.test(v.lang)).sort((a,b) => voiceScore(b)-voiceScore(a)); } catch(e){ voices = []; }
+  const sel = $('#voiceSel');
+  if (!voices.length){ sel.innerHTML = '<option>Голос браузера за замовчуванням</option>'; return; }
+  sel.innerHTML = voices.map((v,i) => `<option value="${esc(v.name)}">${voiceScore(v)>=5?'★ ':''}${esc(v.name)} · ${esc(v.lang)}</option>`).join('');
+  if (!voices.some(v=>v.name===P.voice)) P.voice = voices[0].name;
+  sel.value = P.voice;
+}
+if ('speechSynthesis' in window){ loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+function speak(text, rate=0.92){
+  if (!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  const v = voices.find(x => x.name===P.voice) || voices[0];
+  if (v){ u.voice = v; u.lang = v.lang; } else u.lang = 'de-DE';
+  u.rate = rate;
+  speechSynthesis.speak(u);
+}
+const sayText = c => c.say || c.en.replace(/\b(jdn|jmdn)\.?/g,'jemanden').replace(/\bjmd\.?/g,'jemand').replace(/\bjdm\.?/g,'jemandem').replace(/\betw\.?/g,'etwas');
+const dictURL = c => 'https://www.dwds.de/?q=' + encodeURIComponent(c.dict || c.en);
+$('#voiceSel').onchange = e => { P.voice = e.target.value; save(); speak('Hallo, Julia! So klingt diese Stimme.'); };
+$('#voiceTest').onclick = () => speak('Hallo, Julia! So klingt diese Stimme.');
+
+/* ---------- header & lessons ---------- */
+function renderStats(){
+  const pool = selected();
+  const due = pool.filter(c => !isNew(c) && isDue(c)).length, fresh = pool.filter(isNew).length, rep = pool.filter(isRepeat).length;
+  $('#stats').innerHTML = `<span class="chip">${pool.length} фраз</span><span class="chip k">на сьогодні ${Math.min(due+fresh, DAILY)}</span><span class="chip r">повторити ${rep}</span>`;
+}
+function renderLessons(){
+  const all = !P.sel;
+  $('#lessonRow').innerHTML = `<button class="lchip all" data-l="*" aria-pressed="${all}">Усі уроки · мікс</button>` +
+    LESSONS.map(l => { const n = CARDS.filter(c=>c.lesson===l).length; const on = !all && P.sel.includes(l);
+      return `<button class="lchip" data-l="${esc(l)}" aria-pressed="${on}">${esc(l)} <small>${n}</small></button>`; }).join('');
+  $('#lessonRow').querySelectorAll('.lchip').forEach(b => b.onclick = () => {
+    const l = b.dataset.l;
+    if (l==='*') P.sel = null;
+    else { const s = new Set(P.sel || []); s.has(l) ? s.delete(l) : s.add(l); P.sel = s.size ? [...s] : null; }
+    save(); renderLessons(); newSession(); if (!$('#view-practice').hidden) startExercise();
+  });
+}
+
+/* ---------- tabs ---------- */
+function showTab(name){
+  $('#tab-cards').setAttribute('aria-selected', name==='cards');
+  $('#tab-practice').setAttribute('aria-selected', name==='practice');
+  $('#view-cards').hidden = name!=='cards'; $('#view-cards').style.display = name==='cards' ? 'flex' : 'none';
+  const p = $('#view-practice'); p.hidden = name!=='practice'; p.style.display = name==='practice' ? 'flex' : 'none';
+  if (name==='practice') startExercise();
+}
+$('#tab-cards').onclick = () => showTab('cards');
+$('#tab-practice').onclick = () => showTab('practice');
+
+/* ---------- card session (saved, so it resumes after closing) ---------- */
+const sessionKey = () => P.mode + '|' + (P.sel ? P.sel.slice().sort().join(',') : '*');
+function buildDeck(){
+  const pool = selected(), mix = a => P.shuffle ? shuffled(a) : a;
+  if (P.mode==='all') return mix(pool);
+  if (P.mode==='repeat') return mix(pool.filter(isRepeat));
+  if (P.mode==='new') return mix(pool.filter(isNew));
+  // today: words to repeat first, then words whose review day has come, then new words
+  const rep = pool.filter(isRepeat), due = pool.filter(c => !isNew(c) && !isRepeat(c) && isDue(c));
+  due.sort((a,b) => P.cards[a.en].due - P.cards[b.en].due);
+  return [...mix(rep), ...mix(due), ...mix(pool.filter(isNew))].slice(0, DAILY);
+}
+function newSession(list){
+  const deck = list || buildDeck();
+  P.session = {key: list ? 'custom' : sessionKey(), day: today(), ids: deck.map(c=>c.en), i:0, known:[], repeat:[]};
+  save(); renderCard(true);
+}
+function validSession(){
+  const s = P.session;
+  return s && Array.isArray(s.ids) && s.ids.every(id => BY_ID[id]) && (s.key==='custom' || s.key===sessionKey())
+    && s.i < s.ids.length && !(P.mode==='today' && s.day!==today());
+}
+const deckNow = () => P.session.ids.map(id => BY_ID[id]);
+
+function gapHTML(c){ return esc(c.ex).replace('___', `<button type="button" class="gap" data-ans="${esc(c.ans)}" aria-label="Показати пропущене слово">?</button>`); }
+function sayBtn(c){ return `<button type="button" class="say" data-say="${esc(sayText(c))}" aria-label="Прослухати вимову">${SPK}</button>`; }
+const dictLink = c => `<a class="dict" href="${dictURL(c)}" target="_blank" rel="noopener">DWDS ↗</a>`;
+
+function renderCard(fresh){
+  renderStats();
+  const s = P.session, total = s.ids.length, stage = $('#stage');
+  $('#count').textContent = `${Math.min(s.i, total)} / ${total}`;
+  $('#barfill').style.width = total ? (s.i/total*100)+'%' : '0';
+
+  if (!total){
+    const msg = {today:'На сьогодні все повторено! Наступні слова повернуться за розкладом.', repeat:'Слів «повторити» немає.', new:'Нових слів немає, усі вже пройдені.', all:'У цих уроках поки немає карток.'}[P.mode];
+    stage.innerHTML = `<div class="panel"><h2>Готово на сьогодні</h2><p class="muted">${msg}</p><div class="row"><button class="btn btn-dark" id="toAll">Пройти всі картки</button><button class="btn btn-k" id="toPr">До вправ</button></div></div>`;
+    $('#toAll').onclick = () => { P.mode='all'; $('#mode').value='all'; newSession(); };
+    $('#toPr').onclick = () => showTab('practice');
+    return;
+  }
+  if (s.i >= total){ renderEnd(); return; }
+
+  const c = BY_ID[s.ids[s.i]], rev = P.reverse;
+  const tag = LESSONS.length > 1 || !P.sel ? `<span class="tag">${esc(c.lesson)}</span>` : '';
+  const front = rev
+    ? `<div class="face-top"><span class="lang">Українською${tag}</span></div><div class="main"><p class="phrase">${esc(c.uk)}</p></div><p class="hint">Згадай німецькою · натисни, щоб перевернути</p>`
+    : `<div class="face-top"><span class="lang">Deutsch${tag}</span>${sayBtn(c)}</div><div class="main"><p class="phrase">${esc(c.en)}</p></div><p class="hint">Натисни на картку, щоб перевернути</p>`;
+  const top = rev ? [c.en, c.uk] : [c.uk, c.en];
+  const back = `<div class="back-head"><div class="t"><p class="big">${esc(top[0])}</p><p class="small">${esc(top[1])}</p></div><div class="side">${sayBtn(c)}${dictLink(c)}</div></div>
+    <div class="block"><span class="label">Приклад · торкнись пропуску</span><p class="ex">${gapHTML(c)}</p></div>
+    <div class="block"><span class="label">Колокації</span><div class="cols">${c.col.map(x=>`<span class="col">${esc(x)}</span>`).join('')}</div></div>`;
+
+  let card = $('#card');
+  if (!card || fresh){
+    stage.innerHTML = `<div style="display:flex;flex-direction:column;gap:14px">
+      <div class="scene"><div class="card" id="card" tabindex="0" role="button" aria-label="Картка: натисни, щоб перевернути"><div class="face front"></div><div class="face back"></div></div></div>
+      <div class="actions"><button class="btn btn-r" id="bRep">↺ Повторити</button><button class="btn btn-k" id="bKnow">✓ Знаю</button></div>
+      <div class="keys"><kbd>пробіл</kbd> перевернути · <kbd>←</kbd> повторити · <kbd>→</kbd> знаю</div></div>`;
+    card = $('#card');
+    card.addEventListener('click', e => {
+      if (e.target.closest('.dict')){ e.stopPropagation(); return; }
+      const sb = e.target.closest('.say'); if (sb){ e.stopPropagation(); speak(sb.dataset.say); return; }
+      const g = e.target.closest('.gap'); if (g){ e.stopPropagation(); g.textContent = g.textContent==='?' ? g.dataset.ans : '?'; return; }
+      card.classList.toggle('flipped');
+    });
+    $('#bRep').onclick = () => mark(false);
+    $('#bKnow').onclick = () => mark(true);
+  }
+  card.classList.add('instant'); card.classList.remove('flipped');
+  card.querySelector('.front').innerHTML = front;
+  card.querySelector('.back').innerHTML = back;
+  void card.offsetWidth; card.classList.remove('instant');
+}
+function mark(knew){
+  const s = P.session, id = s.ids[s.i]; if (!id) return;
+  grade(BY_ID[id], knew);
+  (knew ? s.known : s.repeat).push(id);
+  s.i++; save(); renderCard(false);
+}
+function renderEnd(){
+  const s = P.session, r = s.repeat.map(id=>BY_ID[id]).filter(Boolean);
+  const left = P.mode==='today' ? buildDeck().length : 0;
+  $('#stage').innerHTML = `<div class="panel">
+    <h2>Порцію пройдено!</h2>
+    <p class="muted">Знаю: <b>${s.known.length}</b> · Повторити: <b>${r.length}</b></p>
+    ${r.length ? `<span class="label">Слова для повторення</span><ul class="list">${r.map(c=>`<li><b>${esc(c.en)}</b><span>${esc(c.uk)}</span></li>`).join('')}</ul>` : `<p class="muted">Жодного слова на повторення. Чудова робота!</p>`}
+    <div class="row">${r.length ? `<button class="btn btn-r" id="again">Повторити ці слова (${r.length})</button>` : ''}
+    ${left ? `<button class="btn btn-dark" id="more">Ще порція (${left})</button>` : ''}
+    <button class="btn btn-k" id="goPractice">До вправ</button></div>
+  </div>`;
+  if (r.length) $('#again').onclick = () => newSession(P.shuffle ? shuffled(r) : r);
+  if (left) $('#more').onclick = () => newSession();
+  $('#goPractice').onclick = () => showTab('practice');
+}
+
+$('#mode').onchange = e => { P.mode = e.target.value; save(); newSession(); };
+$('#shuffle').onclick = e => { P.shuffle = !P.shuffle; e.currentTarget.setAttribute('aria-pressed', P.shuffle); save(); newSession(); };
+$('#reverse').onclick = e => { P.reverse = !P.reverse; e.currentTarget.setAttribute('aria-pressed', P.reverse); save(); renderCard(false); };
+$('#restartTop').onclick = () => newSession();
+document.addEventListener('keydown', e => {
+  if ($('#view-cards').hidden || e.target.matches('input,select,textarea')) return;
+  const card = $('#card'); if (!card || !P.session || P.session.i >= P.session.ids.length) return;
+  if (e.code==='Space'){ e.preventDefault(); card.classList.toggle('flipped'); }
+  else if (e.key==='ArrowLeft') mark(false);
+  else if (e.key==='ArrowRight') mark(true);
+});
+
+/* ---------- practice ---------- */
+let ex = 'match';
+document.querySelectorAll('.ex-tab').forEach(b => b.onclick = () => {
+  ex = b.dataset.ex;
+  document.querySelectorAll('.ex-tab').forEach(x => x.setAttribute('aria-selected', x===b));
+  startExercise();
+});
+$('#ppool').onchange = () => startExercise();
+
+function practicePool(){
+  const pool = selected();
+  if ($('#ppool').value==='repeat'){ const r = pool.filter(isRepeat); if (r.length>=4) return {list:r, note:''}; return {list:pool, note:'Слів «повторити» менше чотирьох, тому беремо всі фрази обраних уроків.'}; }
+  return {list:pool, note:''};
+}
+function startExercise(){ ({match:runMatch, gap:runGap, choice:runChoice, listen:runListen, fork:runFork, sort:runSort})[ex](); }
+
+const pst = () => $('#pstage');
+const noteHTML = n => n ? `<p class="muted" style="font-size:13px">${n}</p>` : '';
+const meta = (i, n) => `<div class="q-meta"><span>Питання ${i+1} з ${n}</span><button class="linkbtn" id="endRound">Завершити раунд</button></div>`;
+const bindEnd = fn => { const e = $('#endRound'); if (e) e.onclick = fn; };
+
+/* rotation: unseen and missed items first, so rounds don't repeat */
+function pickRound(kind, list, keyOf, n){
+  P.ex = P.ex || {}; const m = P.ex[kind] = P.ex[kind] || {};
+  const fresh = list.filter(x => !m[keyOf(x)]).length;
+  const qs = shuffled(list).sort((a,b) => (m[keyOf(a)]||0) - (m[keyOf(b)]||0)).slice(0, Math.min(n, list.length));
+  return {qs, info: `У раунді ${qs.length} завдань, нових для тебе: ${Math.min(fresh, qs.length)}.`};
+}
+function seen(kind, key, ok){
+  P.ex = P.ex || {}; const m = P.ex[kind] = P.ex[kind] || {};
+  m[key] = ok ? (m[key]||0) + 1 : 0.5; save();
+}
+function lessonSets(arr){
+  const mine = arr.filter(x => !P.sel || P.sel.includes(x.lesson));
+  return mine.length ? {list:mine, note:''} : {list:arr, note:'Для обраних уроків цієї вправи ще немає, тому беремо всі уроки.'};
+}
+function resultHTML(score, total, wrong){
+  return `<div class="panel"><span class="label">Результат</span><div class="score">${score}<small> / ${total}</small></div>
+    ${wrong.length ? `<span class="label">Варто повторити</span><ul class="list">${wrong.map(c=>`<li><b>${esc(c.en)}</b><span>${esc(c.uk)}</span></li>`).join('')}</ul>
+    <button class="btn btn-r" id="addRep">Додати ці слова в «повторити»</button>` : '<p class="muted">Без жодної помилки!</p>'}
+    <div class="row"><button class="btn btn-dark" id="again2">Ще раунд</button></div></div>`;
+}
+function bindResult(wrong){
+  $('#again2').onclick = startExercise;
+  const a = $('#addRep'); if (a) a.onclick = () => { wrong.forEach(c=>grade(c,false)); save(); renderStats(); a.disabled=true; a.textContent='Додано'; };
+}
+
+/* 1. Match pairs: boards of 6 until every phrase is matched */
+function runMatch(){
+  const {list, note: n0} = practicePool();
+  const {qs: all, info} = pickRound('match', list, c => c.en, list.length);
+  const note = [n0, info].filter(Boolean).join(' ');
+  const boards = []; for (let k = 0; k < all.length; k += 6) boards.push(all.slice(k, k+6));
+  if (boards.length > 1 && boards[boards.length-1].length < 3){ const last = boards.pop(); boards[boards.length-1].push(...last); }
+  let bi = 0; const missed = new Set(), matchedCards = [];
+  const finish = () => {
+    const wrong = matchedCards.filter(c => missed.has(c));
+    pst().innerHTML = resultHTML(matchedCards.length - wrong.length, matchedCards.length, wrong); bindResult(wrong);
+  };
+  const board = () => {
+    if (bi >= boards.length){ finish(); return; }
+    const items = boards[bi], left = shuffled(items), right = shuffled(items);
+    let pick = null, done = 0;
+    pst().innerHTML = `<div class="panel"><div class="q-meta"><span>Набір ${bi+1} з ${boards.length}</span><button class="linkbtn" id="endRound">Завершити раунд</button></div>
+      <h2>З'єднай пари</h2><p class="muted">Обери фразу ліворуч, потім її переклад праворуч.</p>${bi===0?noteHTML(note):''}
+      <div class="match"><div class="colm">${left.map((c,i)=>`<button class="m" data-side="l" data-k="${i}">${esc(c.en)}</button>`).join('')}</div>
+      <div class="colm">${right.map((c,i)=>`<button class="m" data-side="r" data-k="${i}">${esc(c.uk)}</button>`).join('')}</div></div>
+      <p class="fb" id="mfb"></p></div>`;
+    bindEnd(finish);
+    pst().querySelectorAll('.m').forEach(b => b.onclick = () => {
+      if (b.classList.contains('ok')) return;
+      const side = b.dataset.side, c = side==='l' ? left[b.dataset.k] : right[b.dataset.k];
+      if (side==='l'){ speak(sayText(c)); pst().querySelectorAll('.m[data-side="l"]').forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); pick = {b, c}; return; }
+      if (!pick){ $('#mfb').textContent = 'Спершу обери німецьку фразу ліворуч.'; return; }
+      if (pick.c === c){
+        pick.b.classList.remove('sel'); pick.b.classList.add('ok'); b.classList.add('ok');
+        seen('match', c.en, !missed.has(c)); matchedCards.push(c); pick = null; done++;
+        $('#mfb').textContent = '';
+        if (done === items.length){
+          $('#mfb').className = 'fb good';
+          $('#mfb').innerHTML = bi < boards.length-1 ? `Набір готовий! <button class="btn btn-dark btn-sm" id="mNext" style="margin-left:8px">Наступний набір →</button>` : `Усі пари з'єднано! <button class="btn btn-dark btn-sm" id="mNext" style="margin-left:8px">Результат →</button>`;
+          $('#mNext').onclick = () => { bi++; board(); };
+        }
+      } else { missed.add(pick.c); b.classList.add('no'); setTimeout(()=>b.classList.remove('no'), 400); }
+    });
+  };
+  board();
+}
+
+/* shared quiz runner for gap / choice / listen: one question per phrase */
+function quizRunner(kind, build){
+  const {list, note: n0} = practicePool();
+  const {qs, info} = pickRound(kind, list, c => c.en, list.length);
+  const note = [n0, info].filter(Boolean).join(' ');
+  let i = 0, score = 0, answered = 0; const wrong = [];
+  const next = () => {
+    if (i >= qs.length){ pst().innerHTML = resultHTML(score, qs.length, wrong); bindResult(wrong); return; }
+    build(qs[i], i, qs.length, note, ok => { answered = i + 1; if (ok) score++; else wrong.push(qs[i]); seen(kind, qs[i].en, ok); }, () => { i++; next(); });
+    bindEnd(() => { i = qs.length = answered; next(); });
+  };
+  next();
+}
+
+/* 5. Collocation forks: hand-made forks + one fork per card from its collocations */
+const wordsOf = t => String(t).toLowerCase().match(/[a-zäöüß]{4,}/g) || [];
+function autoForks(cards){
+  const pool = CARDS.filter(o => o.col && o.col.length);
+  return cards.filter(c => c.col && c.col.length).map(c => {
+    const own = new Set(wordsOf(c.en + ' ' + c.col.join(' ')));
+    const bad = shuffled(pool.filter(o => o !== c).flatMap(o => o.col)).filter(x => !wordsOf(x).some(w => own.has(w)));
+    return {lesson:c.lesson, word:c.en, ok:c.col.slice(0,3), bad:bad.slice(0, c.col.length >= 3 ? 1 : 2), auto:true,
+      why:`${c.en} — ${c.uk}. Колокації: ${c.col.join(' · ')}.`};
+  });
+}
+function runFork(){
+  const cards = selected();
+  const hand = FORKS.filter(x => !P.sel || P.sel.includes(x.lesson));
+  const list = hand.length ? hand : autoForks(cards);
+  const key = f => (f.auto ? 'a:' : '') + f.word;
+  const {qs, info} = pickRound('fork', list, key, Math.max(cards.length, 1));
+  const note = info;
+  let i = 0, score = 0, answered = 0; const wrong = [];
+  const next = () => {
+    if (i >= qs.length){
+      pst().innerHTML = `<div class="panel"><span class="label">Результат</span><div class="score">${score}<small> / ${qs.length}</small></div>
+        ${wrong.length ? `<span class="label">Повтори ці поєднання</span><ul class="list">${wrong.map(f=>`<li><b>${esc(f.word)}</b><span>${esc(f.ok.join(' · '))}</span></li>`).join('')}</ul>` : '<p class="muted">Усі виделки правильно!</p>'}
+        <div class="row"><button class="btn btn-dark" id="fAgain">Ще раунд</button></div></div>`;
+      $('#fAgain').onclick = runFork; return;
+    }
+    const f = qs[i], opts = shuffled([...f.ok, ...f.bad]);
+    pst().innerHTML = `<div class="panel">${meta(i, qs.length)}${i===0?noteHTML(note):''}
+      <span class="label">${f.auto ? 'Обери всі колокації, що належать до цієї фрази' : 'Обери всі слова, що поєднуються з ключовим'}</span>
+      <div class="fork"><div class="fork-key">${esc(f.word)}</div>
+      <div class="fork-opts">${opts.map((o,k)=>`<button class="fopt" data-k="${k}" aria-pressed="false">${esc(o)}</button>`).join('')}</div></div>
+      <p class="fb" id="ffb"></p>
+      <div class="row"><button class="btn btn-dark" id="fcheck">Перевірити</button></div></div>`;
+    bindEnd(() => { i = qs.length = answered; next(); });
+    let checked = false;
+    pst().querySelectorAll('.fopt').forEach(b => b.onclick = () => { if (!checked) b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')!=='true'); });
+    $('#fcheck').onclick = () => {
+      if (checked){ i++; next(); return; }
+      checked = true; answered = i + 1; let ok = true;
+      pst().querySelectorAll('.fopt').forEach(b => {
+        const o = opts[b.dataset.k], picked = b.getAttribute('aria-pressed')==='true', right = f.ok.includes(o);
+        if (picked && right) b.classList.add('good');
+        else if (picked && !right){ b.classList.add('wrong'); ok = false; }
+        else if (!picked && right){ b.classList.add('missed'); ok = false; }
+      });
+      if (ok) score++; else wrong.push(f);
+      seen('fork', key(f), ok);
+      const fb = $('#ffb'); fb.className = 'fb ' + (ok?'good':'wrong');
+      fb.textContent = (ok ? 'Правильно! ' : 'Не зовсім. ') + f.why;
+      if (f.auto) speak(f.ok.join('. '));
+      $('#fcheck').textContent = 'Далі →';
+    };
+  };
+  next();
+}
+
+/* 6. Categories: tap a phrase, then its group */
+function runSort(){
+  const {list, note} = lessonSets(SORTS);
+  const boards = list.map(x => ({lesson:x.lesson, title:x.title, names:Object.keys(x.cats), items:shuffled(Object.entries(x.cats).flatMap(([n,a]) => a.map(en => ({en, cat:n}))))}));
+  let bi = 0, good = 0, total = 0; const wrong = [];
+  const finish = () => {
+    pst().innerHTML = `<div class="panel"><span class="label">Результат</span><div class="score">${good}<small> / ${total}</small></div>
+      ${wrong.length ? `<span class="label">Варто повторити</span><ul class="list">${wrong.map(c=>`<li><b>${esc(c.en)}</b><span>${esc(c.cat)}</span></li>`).join('')}</ul>` : '<p class="muted">Усі фрази розкладено правильно!</p>'}
+      <div class="row"><button class="btn btn-dark" id="sAgain2">Ще раз</button></div></div>`;
+    $('#sAgain2').onclick = runSort;
+  };
+  const board = () => {
+    if (bi >= boards.length){ finish(); return; }
+    const bd = boards[bi], items = bd.items, place = items.map(() => null);
+    let pick = null, checked = false;
+    const draw = () => {
+      const chip = (c, k) => `<button class="schip${pick===k?' sel':''}" data-k="${k}">${esc(c.en)}</button>`;
+      pst().innerHTML = `<div class="panel"><div class="q-meta"><span>Набір ${bi+1} з ${boards.length} · ${esc(bd.lesson)}</span><button class="linkbtn" id="endRound">Завершити раунд</button></div>
+        <h2>${esc(bd.title)}</h2>${bi===0?noteHTML(note):''}
+        <p class="muted">Торкнись фрази, потім групи. Фразу в групі можна торкнутись ще раз, щоб забрати її.</p>
+        <div class="pool">${items.map((c,k)=> place[k]===null ? chip(c,k) : '').join('') || '<span class="muted">Усі фрази розкладено.</span>'}</div>
+        <div class="bins">${bd.names.map((n,j) => `<div class="bin${pick!==null?' armed':''}" data-n="${j}" role="button" tabindex="0"><span class="bin-name">${esc(n)}</span><div class="bin-items">${items.map((c,k)=> place[k]===j ? chip(c,k) : '').join('')}</div></div>`).join('')}</div>
+        <p class="fb" id="sfb"></p>
+        <div class="row"><button class="btn btn-dark" id="scheck" ${place.includes(null)?'disabled':''}>Перевірити</button></div></div>`;
+      bindEnd(finish);
+      pst().querySelectorAll('.schip').forEach(b => b.onclick = e => {
+        e.stopPropagation(); if (checked) return;
+        const k = +b.dataset.k;
+        if (place[k] !== null && pick !== null && pick !== k){ place[pick] = place[k]; pick = null; }
+        else if (place[k] !== null){ place[k] = null; pick = null; }
+        else pick = pick===k ? null : k;
+        draw();
+      });
+      pst().querySelectorAll('.bin').forEach(b => b.onclick = () => {
+        if (checked || pick===null) return;
+        place[pick] = +b.dataset.n; pick = null; draw();
+      });
+      $('#scheck').onclick = () => {
+        if (checked){ bi++; board(); return; }
+        checked = true; let g = 0;
+        pst().querySelectorAll('.schip').forEach(b => {
+          const c = items[+b.dataset.k], ok = place[+b.dataset.k]===bd.names.indexOf(c.cat); if (ok) g++; else wrong.push(c);
+          seen('sort', c.en, ok);
+          b.classList.add(ok?'good':'wrong');
+          if (!ok) b.insertAdjacentHTML('beforeend', `<small>→ ${esc(c.cat)}</small>`);
+        });
+        good += g; total += items.length;
+        const fb = $('#sfb'); fb.className = 'fb ' + (g===items.length?'good':'wrong');
+        fb.textContent = `Правильно: ${g} з ${items.length}.` + (g===items.length ? ' Чудово!' : ' Неправильні фрази підписано, куди вони належать.');
+        $('#scheck').textContent = bi < boards.length-1 ? 'Наступний набір →' : 'Результат →';
+      };
+    };
+    draw();
+  };
+  if (!boards.length){ pst().innerHTML = '<div class="panel"><p class="muted">Для цього уроку ще немає категорій.</p></div>'; return; }
+  board();
+}
+
+/* 2. Fill the gap */
+function runGap(){
+  quizRunner('gap', (c, i, n, note, record, go) => {
+    const w = Math.max(5, c.ans.length + 2);
+    pst().innerHTML = `<div class="panel">${meta(i,n)}${i===0?noteHTML(note):''}<h2>Встав пропущене</h2>
+      <p class="q-sent">${esc(c.ex).replace('___', `<input id="gin" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:${w}ch" aria-label="Пропущене слово">`)}</p>
+      <p class="muted">Підказка: <b>${esc(c.uk)}</b></p>
+      <p class="fb" id="gfb"></p>
+      <div class="row"><button class="btn btn-plain" id="ghint">Перша літера</button><button class="btn btn-dark" id="gcheck">Перевірити</button></div></div>`;
+    const inp = $('#gin'), fb = $('#gfb'), btn = $('#gcheck'); let checked = false;
+    inp.focus();
+    $('#ghint').onclick = () => { if (!checked){ inp.value = c.ans[0]; inp.focus(); } };
+    const act = () => {
+      if (checked){ go(); return; }
+      if (!inp.value.trim()) { inp.focus(); return; }
+      checked = true;
+      const ok = norm(inp.value) === norm(c.ans);
+      inp.classList.add(ok?'good':'wrong'); inp.readOnly = true; record(ok);
+      fb.className = 'fb ' + (ok?'good':'wrong');
+      fb.innerHTML = ok ? 'Правильно!' : `Правильна відповідь: <b>${esc(c.ans)}</b>`;
+      $('#ghint').disabled = true; btn.textContent = 'Далі →'; btn.focus();
+    };
+    btn.onclick = act;
+    inp.onkeydown = e => { if (e.key==='Enter'){ e.preventDefault(); act(); } };
+  });
+}
+
+/* 3. Multiple choice (both directions) */
+function runChoice(){
+  quizRunner('choice', (c, i, n, note, record, go) => {
+    const toUk = Math.random() < 0.5;
+    const others = shuffled(CARDS.filter(x=>x!==c)).slice(0,3);
+    const opts = shuffled([c, ...others]);
+    const label = x => toUk ? x.uk : x.en;
+    pst().innerHTML = `<div class="panel">${meta(i,n)}${i===0?noteHTML(note):''}
+      <span class="label">${toUk ? 'Обери переклад' : 'Обери німецькою'}</span>
+      <div class="q-phrase"><p class="big">${esc(toUk ? c.en : c.uk)}</p>${toUk ? sayBtn(c) : ''}</div>
+      <div class="opts">${opts.map((o,k)=>`<button class="opt" data-k="${k}">${esc(label(o))}</button>`).join('')}</div>
+      <p class="fb" id="cfb"></p>
+      <div class="row"><button class="btn btn-dark" id="cnext" hidden>Далі →</button></div></div>`;
+    const sb = pst().querySelector('.say'); if (sb) sb.onclick = () => speak(sb.dataset.say);
+    let answered = false;
+    pst().querySelectorAll('.opt').forEach(b => b.onclick = () => {
+      if (answered) return; answered = true;
+      const o = opts[b.dataset.k], ok = o === c; record(ok);
+      b.classList.add(ok?'good':'wrong');
+      pst().querySelectorAll('.opt').forEach(x => { if (opts[x.dataset.k]===c) x.classList.add('good'); });
+      $('#cfb').className = 'fb ' + (ok?'good':'wrong');
+      $('#cfb').textContent = ok ? 'Так!' : 'Не зовсім. Правильну відповідь виділено.';
+      if (!toUk || !ok) speak(sayText(c));
+      const nx = $('#cnext'); nx.hidden = false; nx.onclick = go; nx.focus();
+    });
+  });
+}
+
+/* 4. Listen & write */
+function runListen(){
+  quizRunner('listen', (c, i, n, note, record, go) => {
+    pst().innerHTML = `<div class="panel">${meta(i,n)}${i===0?noteHTML(note):''}<h2>Почуй і напиши</h2>
+      <div class="play"><button class="btn btn-k" id="lp">▶ Прослухати</button><button class="btn btn-plain" id="ls">Повільніше</button></div>
+      <input class="typed" id="lin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Напиши фразу німецькою" aria-label="Фраза, яку ти почув">
+      <p class="fb" id="lfb"></p>
+      <div class="row"><button class="btn btn-dark" id="lcheck">Перевірити</button></div></div>`;
+    const t = sayText(c);
+    $('#lp').onclick = () => speak(t, 0.92);
+    $('#ls').onclick = () => speak(t, 0.6);
+    const inp = $('#lin'), fb = $('#lfb'), btn = $('#lcheck'); let checked = false;
+    inp.focus();
+    const act = () => {
+      if (checked){ go(); return; }
+      if (!inp.value.trim()){ inp.focus(); return; }
+      checked = true;
+      const v = norm(inp.value), ok = v === norm(t) || v === norm(c.en);
+      inp.classList.add(ok?'good':'wrong'); inp.readOnly = true; record(ok);
+      fb.className = 'fb ' + (ok?'good':'wrong');
+      fb.innerHTML = (ok ? 'Правильно! ' : 'Правильно так: ') + `<b>${esc(c.en)}</b> · ${esc(c.uk)}`;
+      btn.textContent = 'Далі →'; btn.focus();
+    };
+    btn.onclick = act;
+    inp.onkeydown = e => { if (e.key==='Enter'){ e.preventDefault(); act(); } };
+  });
+}
+
+/* ---------- progress code ---------- */
+const toCode = () => btoa(unescape(encodeURIComponent(JSON.stringify({v:2, cards:P.cards}))));
+$('#copyCode').onclick = async () => {
+  const code = toCode(), box = $('#codeBox'); box.value = code;
+  try { await navigator.clipboard.writeText(code); $('#codeMsg').textContent = 'Код скопійовано. Встав його на іншому пристрої в це саме поле.'; }
+  catch(e){ box.focus(); box.select(); $('#codeMsg').textContent = 'Код у полі вище: виділи його й скопіюй.'; }
+};
+$('#loadCode').onclick = () => {
+  try {
+    const d = JSON.parse(decodeURIComponent(escape(atob($('#codeBox').value.trim()))));
+    if (!d || typeof d.cards !== 'object') throw 0;
+    P.cards = d.cards; save(); newSession(); renderStats();
+    $('#codeMsg').textContent = `Прогрес відновлено: ${Object.keys(d.cards).length} карток.`;
+  } catch(e){ $('#codeMsg').textContent = 'Код не підходить. Скопіюй його ще раз повністю.'; }
+};
+let resetArmed = false;
+$('#reset').onclick = e => {
+  const b = e.currentTarget;
+  if (!resetArmed){ resetArmed = true; b.textContent = 'Точно? Натисни ще раз'; setTimeout(()=>{resetArmed=false; b.textContent='Скинути весь прогрес';}, 4000); return; }
+  P.cards = {}; resetArmed = false; b.textContent = 'Скинути весь прогрес'; save(); newSession();
+  $('#codeMsg').textContent = 'Прогрес скинуто.';
+};
+
+/* ---------- start ---------- */
+$('#mode').value = P.mode;
+$('#shuffle').setAttribute('aria-pressed', P.shuffle);
+$('#reverse').setAttribute('aria-pressed', P.reverse);
+renderLessons();
+if (validSession()) renderCard(true); else newSession();
+</script>
+
+</body></html>
